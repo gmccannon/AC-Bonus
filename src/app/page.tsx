@@ -10,6 +10,10 @@ export default function Home() {
       </h1>
 
       <p>
+        George McCannon - Advanced Computing Spring 2025
+      </p>
+
+      <p>
         In the field of autonomous systems and robotic navigation, spatial intelligence—the ability to perceive, interpret, and interact with spatial environments—requires precise and adaptable control mechanisms. One of the most fundamental and widely adopted algorithms for achieving this control is the Proportional-Integral-Derivative (PID) controller. This paper provides an overview of the PID algorithm and explores its critical role in enabling spatial intelligence across various domains.
       </p>
 
@@ -95,10 +99,6 @@ export default function Home() {
 
       <p>
         The Proportional-Integral-Derivative controller remains a cornerstone technology for the development of spatially intelligent systems. Its ability to manage real-time feedback, correct errors, and predict future system behavior makes it uniquely suited for environments that demand precise spatial awareness and adaptation. As the field of spatial intelligence continues to advance, PID control will remain a fundamental technique supporting future innovations.
-      </p>
-
-      <p>
-        George McCannon 2025
       </p>
     </div>
   );
