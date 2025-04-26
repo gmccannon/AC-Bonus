@@ -58,7 +58,7 @@ export default function Demo() {
   
 
   return (
-    <Card className="w-full p-6 mt-10 shadow-2xl rounded-2xl w-300">
+    <Card className="p-6 mt-10 shadow-2xl rounded-2xl w-300">
       <CardContent className="flex flex-col space-y-6">
         <h2 className="text-2xl font-bold text-center">Interactive PID Controller Demo</h2>
 
