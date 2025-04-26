@@ -96,6 +96,10 @@ export default function Home() {
       <p>
         The Proportional-Integral-Derivative controller remains a cornerstone technology for the development of spatially intelligent systems. Its ability to manage real-time feedback, correct errors, and predict future system behavior makes it uniquely suited for environments that demand precise spatial awareness and adaptation. As the field of spatial intelligence continues to advance, PID control will remain a fundamental technique supporting future innovations.
       </p>
+
+      <p>
+        George McCannon 2025
+      </p>
     </div>
   );
 }
