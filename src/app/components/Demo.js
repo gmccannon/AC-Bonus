@@ -11,7 +11,6 @@ import {
   ResponsiveContainer,
 } from "recharts";
 import { Slider } from "@/components/ui/slider";
-import { Checkbox } from "@/components/ui/checkbox";
 import { Label } from "@/components/ui/label";
 import { Card, CardContent } from "@/components/ui/card";
 import { ReferenceLine } from "recharts";
@@ -22,9 +21,6 @@ export default function Demo() {
   const [ki, setKi] = useState(0);
   const [kd, setKd] = useState(0);
   const [leakRate, setLeakRate] = useState(0.1);
-  const [useP, setUseP] = useState(true);
-  const [useI, setUseI] = useState(false);
-  const [useD, setUseD] = useState(false);
   const [data, setData] = useState([]);
 
   useEffect(() => {
@@ -41,20 +37,20 @@ export default function Demo() {
       const derivative = error - lastError;
       let output = 0;
   
-      if (useP) output += kp * error;
-      if (useI) output += ki * integral;
-      if (useD) output += kd * derivative;
+      output += kp * error;
+      output += ki * integral;
+      output += kd * derivative;
   
-      value += output * 0.05;      // system response to control
-      value -= leakRate;           // simulate leak
-      value = Math.max(0, value);  // prevent negative values
+      value += output * 0.05;     
+      value -= leakRate;           
+      value = Math.max(0, value); 
       lastError = error;
   
       newData.push({ time: t, value });
     }
   
     setData(newData);
-  }, [kp, ki, kd, useP, useI, useD, leakRate]);
+  }, [kp, ki, kd, leakRate]);
   
 
   return (
@@ -124,30 +120,6 @@ export default function Demo() {
               value={[leakRate]}
               onValueChange={(v) => setLeakRate(v[0])}
             />
-          </div>
-        </div>
-
-        <div className="flex flex-wrap gap-6 justify-center">
-          <div className="flex items-center space-x-2">
-            <Checkbox
-              checked={useP}
-              onCheckedChange={(v) => setUseP(v === true)}
-            />
-            <Label>Proportional</Label>
-          </div>
-          <div className="flex items-center space-x-2">
-            <Checkbox
-              checked={useI}
-              onCheckedChange={(v) => setUseI(v === true)}
-            />
-            <Label>Integral</Label>
-          </div>
-          <div className="flex items-center space-x-2">
-            <Checkbox
-              checked={useD}
-              onCheckedChange={(v) => setUseD(v === true)}
-            />
-            <Label>Derivative</Label>
           </div>
         </div>
       </CardContent>
