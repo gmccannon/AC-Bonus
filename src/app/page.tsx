@@ -6,7 +6,7 @@ export default function Home() {
     <div className="flex flex-col bg-white text-black text-justify font-mono pl-64 pr-64 pt-25 pb-25 items-center justify-items-center min-h-screen p-8 space-y-8">
       
       <h1 className="text-4xl font-bold mb-4 text-center">
-        PID Control in Spatial Intelligence Systems
+        PID Algorithm in Spatial Intelligence Systems
       </h1>
 
       <p>
