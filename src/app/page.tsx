@@ -1,103 +1,101 @@
 import Image from "next/image";
+import Demo from "./components/Demo";
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
+    <div className="flex flex-col bg-white text-black text-justify font-mono pl-64 pr-64 pt-25 pb-25 items-center justify-items-center min-h-screen p-8 space-y-8">
+      
+      <h1 className="text-4xl font-bold mb-4 text-center">
+        PID Control in Spatial Intelligence Systems
+      </h1>
+
+      <p>
+        In the field of autonomous systems and robotic navigation, spatial intelligence—the ability to perceive, interpret, and interact with spatial environments—requires precise and adaptable control mechanisms. One of the most fundamental and widely adopted algorithms for achieving this control is the Proportional-Integral-Derivative (PID) controller. This paper provides an overview of the PID algorithm and explores its critical role in enabling spatial intelligence across various domains.
+      </p>
+
+      <h2 className="text-2xl font-semibold mt-8">
+        Mathematical Formulation
+      </h2>
+
+      <p>
+        The PID controller computes a corrective input <em>u(t)</em> based on the current error signal <em>e(t)</em>, which is the difference between a desired setpoint and the current system output. The control law is given by:
+      </p>
+
+      <div className="flex justify-center my-4">
         <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
+          src="/equation.png"
+          alt="PID Control Equation"
+          width={977}
+          height={80}
           priority
         />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+      </div>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+      <p>
+        where: <br />
+        - <em>Kₚ</em> is the proportional gain, <br />
+        - <em>Kᵢ</em> is the integral gain, <br />
+        - <em>Kd</em> is the derivative gain, <br />
+        - <em>τ</em> is a dummy variable of integration.
+      </p>
+
+      <p>
+        The proportional term responds to the current magnitude of the error, the integral term accounts for the accumulation of past errors, and the derivative term predicts future error based on its rate of change.
+      </p>
+
+      <h2 className="text-2xl font-semibold mt-8">
+        Control Architecture
+      </h2>
+
+      <p>
+        The standard architecture of a PID controller is illustrated in the following block diagram:
+      </p>
+
+      <div className="flex justify-center">
+        <Image
+          src="/diagram.png"
+          alt="PID Control Block Diagram"
+          width={918}
+          height={467}
+          priority
+        />
+      </div>
+
+      <p>
+        The error signal is simultaneously fed into three parallel pathways corresponding to the proportional, integral, and derivative terms. These contributions are summed to form the control input that drives the system toward the desired output. This structure enables the controller to correct deviations effectively and maintain system stability under dynamic conditions.
+      </p>
+
+      <h2 className="text-2xl font-semibold mt-8 text-center">
+        Demo
+        <Demo />
+      </h2>
+
+      <h2 className="text-2xl font-semibold mt-8">
+        Application to Spatial Intelligence
+      </h2>
+
+      <p>
+        PID controllers play an indispensable role in systems requiring spatial reasoning and dynamic interaction with physical environments. Applications include:
+      </p>
+
+      <ul className="list-disc list-inside space-y-1">
+        <li><strong>Path Tracking and Navigation:</strong> Robots and autonomous vehicles utilize PID control to minimize deviation from paths, adjusting steering and velocity accordingly.</li>
+        <li><strong>Balance and Stabilization:</strong> Systems such as drones, bipedal robots, and inverted pendulums employ PID loops to maintain balance against external disturbances.</li>
+        <li><strong>Obstacle Avoidance:</strong> By leveraging the derivative component, robots can react swiftly to changing environments, thereby enhancing spatial responsiveness.</li>
+        <li><strong>Precision Positioning:</strong> Industrial robotic arms and surgical robots use finely tuned PID controllers to achieve sub-millimeter positional accuracy over time.</li>
+      </ul>
+
+      <p>
+        The adaptability and robustness of PID control are essential for realizing the dynamic decision-making and real-time correction demands inherent in spatial intelligence.
+      </p>
+
+      <h2 className="text-2xl font-semibold mt-8">
+        Conclusion
+      </h2>
+
+      <p>
+        The Proportional-Integral-Derivative controller remains a cornerstone technology for the development of spatially intelligent systems. Its ability to manage real-time feedback, correct errors, and predict future system behavior makes it uniquely suited for environments that demand precise spatial awareness and adaptation. As the field of spatial intelligence continues to advance, PID control will remain a fundamental technique supporting future innovations.
+      </p>
     </div>
   );
 }
