@@ -17,6 +17,10 @@ export default function Home() {
         In the field of autonomous systems and robotic navigation, spatial intelligence—the ability to perceive, interpret, and interact with spatial environments—requires precise and adaptable control mechanisms. One of the most fundamental and widely adopted algorithms for achieving this control is the Proportional-Integral-Derivative (PID) controller. This paper provides an overview of the PID algorithm and explores its critical role in enabling spatial intelligence across various domains.
       </p>
 
+      <p>
+        The relevance of PID control extends far beyond theoretical control systems. It is implemented in real-world applications where real-time responsiveness is crucial, such as self-driving cars, robotic arms, quadcopters, and even consumer appliances like thermostats. Despite the development of more complex model-based controllers, PID remains dominant due to its simplicity, reliability, and the ease of tuning its parameters for practical tasks. This page will dive into both the mathematical foundations and practical implementations of PID in spatial reasoning environments.
+      </p>
+
       <h2 className="text-2xl font-semibold mt-8">
         Mathematical Formulation
       </h2>
@@ -44,7 +48,7 @@ export default function Home() {
       </p>
 
       <p>
-        The proportional term responds to the current magnitude of the error, the integral term accounts for the accumulation of past errors, and the derivative term predicts future error based on its rate of change.
+        The proportional term responds to the present error and applies a correction that is directly scaled by the error’s magnitude. The integral term corrects for accumulated past errors, ensuring that the system eventually reaches its target even if small errors persist. The derivative term estimates the future trend of the error based on its current rate of change, providing a dampening effect that reduces overshooting and improves system stability. The balance between these three terms determines how aggressively or conservatively the system responds to changes.
       </p>
 
       <h2 className="text-2xl font-semibold mt-8">
@@ -66,7 +70,11 @@ export default function Home() {
       </div>
 
       <p>
-        The error signal is simultaneously fed into three parallel pathways corresponding to the proportional, integral, and derivative terms. These contributions are summed to form the control input that drives the system toward the desired output. This structure enables the controller to correct deviations effectively and maintain system stability under dynamic conditions.
+        The error signal is simultaneously processed through three separate paths representing the P, I, and D components. Each path transforms the error differently: the proportional path amplifies the signal, the integral path accumulates it over time, and the derivative path analyzes its rate of change. These contributions are then summed to produce the final control output <em>u(t)</em>, which is fed to the system actuator (e.g., a motor, steering mechanism, etc.). This feedback loop continues in real time, dynamically adjusting the system to maintain stability and meet desired performance metrics.
+      </p>
+
+      <p>
+        In digital implementations, PID control is typically run in discrete time steps. Instead of using continuous integrals and derivatives, these values are approximated using numerical methods. This makes PID an excellent fit for embedded systems like Raspberry Pi, Arduino, or custom microcontrollers operating in resource-constrained environments.
       </p>
 
       <h2 className="text-2xl font-semibold mt-8 text-center">
@@ -79,18 +87,18 @@ export default function Home() {
       </h2>
 
       <p>
-        PID controllers play an indispensable role in systems requiring spatial reasoning and dynamic interaction with physical environments. Applications include:
+        PID controllers play an indispensable role in systems requiring spatial reasoning and dynamic interaction with physical environments. Spatial intelligence in machines encompasses a wide range of tasks such as locomotion, navigation, obstacle avoidance, and adaptation to new terrain or configurations. The PID algorithm, while conceptually simple, provides the foundation for enabling this intelligence in systems where precise control and rapid adaptation are needed.
       </p>
 
       <ul className="list-disc list-inside space-y-1">
-        <li><strong>Path Tracking and Navigation:</strong> Robots and autonomous vehicles utilize PID control to minimize deviation from paths, adjusting steering and velocity accordingly.</li>
-        <li><strong>Balance and Stabilization:</strong> Systems such as drones, bipedal robots, and inverted pendulums employ PID loops to maintain balance against external disturbances.</li>
-        <li><strong>Obstacle Avoidance:</strong> By leveraging the derivative component, robots can react swiftly to changing environments, thereby enhancing spatial responsiveness.</li>
-        <li><strong>Precision Positioning:</strong> Industrial robotic arms and surgical robots use finely tuned PID controllers to achieve sub-millimeter positional accuracy over time.</li>
+        <li><strong>Path Tracking and Navigation:</strong> Robots and autonomous vehicles utilize PID control to minimize deviation from paths, adjusting steering and velocity accordingly. It is especially useful in line-following robots, drone flight stabilization, and GPS-based navigation systems.</li>
+        <li><strong>Balance and Stabilization:</strong> Drones, bipedal robots, and self-balancing scooters rely on PID loops to maintain posture and recover from disturbances. The derivative term is particularly important in such applications to prevent oscillations and ensure smooth responses.</li>
+        <li><strong>Obstacle Avoidance:</strong> PID can be used in combination with ultrasonic or infrared sensors to steer away from obstacles while maintaining a planned path. It allows for graceful rerouting rather than abrupt, inefficient decisions.</li>
+        <li><strong>Precision Positioning:</strong> Industrial robotic arms, CNC machines, and even medical robotics depend on PID controllers for sub-millimeter control. The algorithm ensures that actuators move to their exact target positions while compensating for load variations and mechanical imperfections.</li>
       </ul>
 
       <p>
-        The adaptability and robustness of PID control are essential for realizing the dynamic decision-making and real-time correction demands inherent in spatial intelligence.
+        In autonomous robotics, PID is often layered with higher-level decision-making logic such as finite-state machines, SLAM, or reinforcement learning systems. These systems may determine the high-level goals, while PID handles the precise actuation required to reach those goals. This modular separation of control responsibilities is common in robotic software design.
       </p>
 
       <h2 className="text-2xl font-semibold mt-8">
@@ -98,7 +106,11 @@ export default function Home() {
       </h2>
 
       <p>
-        The Proportional-Integral-Derivative controller remains a cornerstone technology for the development of spatially intelligent systems. Its ability to manage real-time feedback, correct errors, and predict future system behavior makes it uniquely suited for environments that demand precise spatial awareness and adaptation. As the field of spatial intelligence continues to advance, PID control will remain a fundamental technique supporting future innovations.
+        The Proportional-Integral-Derivative controller remains a cornerstone technology for the development of spatially intelligent systems. Its ability to manage real-time feedback, correct errors, and predict future system behavior makes it uniquely suited for environments that demand precise spatial awareness and adaptation. PID offers a perfect blend of simplicity, efficiency, and effectiveness that is ideal for edge computing environments, such as those powered by Raspberry Pi. As the complexity of robotic systems continues to grow, PID will remain relevant—either as a standalone controller or as a building block within more sophisticated hybrid systems.
+      </p>
+
+      <p>
+        Future explorations may involve extending PID with machine learning for adaptive gain tuning, integrating it with SLAM systems for environmental mapping, or enhancing its predictive abilities through model-predictive control techniques. Yet even as robotics and AI evolve, the foundational insights and utility of PID will continue to support the next generation of spatially aware systems.
       </p>
     </div>
   );

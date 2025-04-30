@@ -22,9 +22,9 @@ export default function Demo() {
   const [kd, setKd] = useState(0);
   const [leakRate, setLeakRate] = useState(0.1);
   const [data, setData] = useState([]);
+  const target = 10;
 
   useEffect(() => {
-    const target = 10;
     let value = 0;
     let error = target - value;
     let integral = 0;
@@ -69,7 +69,7 @@ export default function Demo() {
               label={{ value: "Value", angle: -90, position: "insideLeft" }}
             />
             <Tooltip />
-            <ReferenceLine y={10} stroke="#10b981" strokeDasharray="3 3" label="Target" />
+            <ReferenceLine y={target} stroke="#10b981" strokeDasharray="3 3" label="Target" />
             <Line
               type="monotone"
               dataKey="value"
@@ -95,7 +95,7 @@ export default function Demo() {
             <Label>Integral Gain (Ki)</Label>
             <Slider
               min={0}
-              max={1}
+              max={2}
               step={0.05}
               value={[ki]}
               onValueChange={(v) => setKi(v[0])}
@@ -105,7 +105,7 @@ export default function Demo() {
             <Label>Derivative Gain (Kd)</Label>
             <Slider
               min={0}
-              max={2}
+              max={5}
               step={0.1}
               value={[kd]}
               onValueChange={(v) => setKd(v[0])}
