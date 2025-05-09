@@ -138,7 +138,7 @@ export default function Home() {
     className="rounded-lg shadow-md"
   />
   <p className="text-sm mt-2 text-gray-600 text-center">
-    This graph shows how the robot deviates from the centerline while following a path. The added noise simulates real-world sensor fluctuations.
+    This graph shows how the robot deviates from the centerline while following a path.
   </p>
 </div>
 
@@ -168,7 +168,7 @@ export default function Home() {
     className="rounded-lg shadow-md"
   />
   <p className="text-sm mt-2 text-gray-600 text-center">
-    Optimal tuning led to the lowest deviation and fastest completion time. However, our best result was still about <strong>20% worse</strong> than similar benchmarks reported online.
+    Optimal tuning led to the lowest deviation and fastest completion time. However, our best result was still about <strong>30% worse</strong> than similar benchmarks reported online.
   </p>
 </div>
 
