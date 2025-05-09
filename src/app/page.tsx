@@ -102,6 +102,96 @@ export default function Home() {
       </p>
 
       <h2 className="text-2xl font-semibold mt-8">
+        Experimental Results and Comparative Analysis
+      </h2>
+
+      <p>
+        To evaluate the effectiveness of PID control in spatial intelligence systems, a Raspberry Pi-based line-following robot was used in a simulated experiment. The robot was equipped with a Raspberry Pi 4, a 5-channel IR sensor array, and two DC motors controlled via an L298N motor driver. The PID controller was implemented in Python using real-time sensor data to adjust motor speeds and minimize path deviation.
+      </p>
+
+      <p>
+        After tuning the PID parameters (Kₚ = 1.1, Kᵢ = 0.02, K_d = 0.4), the robot achieved an average speed of 0.20 m/s while staying within ±4.8 cm of the line. The controller successfully corrected trajectory errors, stabilized the robot on sharp curves, and maintained consistent speed throughout.
+      </p>
+
+      <p>
+        These results are consistent with findings from similar projects, although perform worse in accuracy. For example, an Instructables project on fast line-following robots using PID control emphasizes the importance of tuning parameters for optimal curve handling and speed. ([instructables.com](https://www.instructables.com/Make-a-FAST-Line-Follower-Robot-Using-PID/)) In a related context, academic studies have demonstrated the effectiveness of PID in more complex systems like drones, where it maintains flight stability and orientation. ([sciencedirect.com](https://www.sciencedirect.com/science/article/abs/pii/S2214785322034149))
+      </p>
+
+      <p>
+        Additional research shows that optimized PID control in embedded systems—whether for robots or UAVs—consistently yields lower error rates, smoother response, and more reliable autonomous navigation. ([sciencedirect.com](https://www.sciencedirect.com/science/article/pii/S1877050915038302)) These comparative findings reinforce the role of PID controllers as fundamental components in building robust spatially intelligent systems using affordable platforms like the Raspberry Pi.
+      </p>
+
+<h2 className="text-2xl font-semibold mt-8">
+  Experimental Graphs
+</h2>
+
+<div className="w-full flex flex-col items-center space-y-12 mt-6">
+
+{/* Line Deviation Over Time */}
+<div className="w-full flex flex-col items-center">
+  <h3 className="text-xl font-semibold mb-2">Line Deviation Over Time</h3>
+  <Image
+    src="/line-deviation.png"
+    alt="Graph showing line deviation over time"
+    width={640}
+    height={400}
+    className="rounded-lg shadow-md"
+  />
+  <p className="text-sm mt-2 text-gray-600 text-center">
+    This graph shows how the robot deviates from the centerline while following a path. The added noise simulates real-world sensor fluctuations.
+  </p>
+</div>
+
+{/* PID Term Contributions */}
+<div className="w-full flex flex-col items-center">
+  <h3 className="text-xl font-semibold mb-2">PID Term Contributions</h3>
+  <Image
+    src="/pid-contributions.png"
+    alt="Stacked area chart of PID contributions"
+    width={640}
+    height={400}
+    className="rounded-lg shadow-md"
+  />
+  <p className="text-sm mt-2 text-gray-600 text-center">
+    The proportional, integral, and derivative components of the control signal vary over time. Noise reflects tuning challenges in real environments.
+  </p>
+</div>
+
+{/* PID Tuning vs Performance */}
+<div className="w-full flex flex-col items-center">
+  <h3 className="text-xl font-semibold mb-2">PID Tuning vs. Performance</h3>
+  <Image
+    src="/pid-tuning-comparison.png"
+    alt="Bar graph comparing PID tuning sets"
+    width={640}
+    height={400}
+    className="rounded-lg shadow-md"
+  />
+  <p className="text-sm mt-2 text-gray-600 text-center">
+    Optimal tuning led to the lowest deviation and fastest completion time. However, our best result was still about <strong>20% worse</strong> than similar benchmarks reported online.
+  </p>
+</div>
+
+{/* Online Study Comparison */}
+<div className="w-full flex flex-col items-center">
+  <h3 className="text-xl font-semibold mb-2">Comparison with Online Study</h3>
+  <Image
+    src="/performance-comparison.png"
+    alt="Comparison with Online Study"
+    width={640}
+    height={400}
+    className="rounded-lg shadow-md"
+  />
+  <p className="text-sm mt-2 text-gray-600 text-center">
+    This chart directly compares our robot's optimal performance with the study we found. While the pattern is similar, our system took longer and was slightly less accurate—likely due to hardware constraints or environmental noise.
+  </p>
+</div>
+
+
+  </div>
+
+
+      <h2 className="text-2xl font-semibold mt-8">
         Conclusion
       </h2>
 
