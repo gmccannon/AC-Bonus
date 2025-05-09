@@ -183,7 +183,7 @@ export default function Home() {
     className="rounded-lg shadow-md"
   />
   <p className="text-sm mt-2 text-gray-600 text-center">
-    This chart directly compares our robot's optimal performance with the study we found. While the pattern is similar, our system took longer and was slightly less accurate—likely due to hardware constraints or environmental noise.
+    This chart directly compares our robot's optimal performance with the study we found. While the pattern is similar, our system took longer and was less accurate.
   </p>
 </div>
 
