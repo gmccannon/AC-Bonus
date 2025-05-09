@@ -106,7 +106,7 @@ export default function Home() {
       </h2>
 
       <p>
-        To evaluate the effectiveness of PID control in spatial intelligence systems, a Raspberry Pi-based line-following robot was used in a simulated experiment. The robot was equipped with a Raspberry Pi 4, a 5-channel IR sensor array, and two DC motors controlled via an L298N motor driver. The PID controller was implemented in Python using real-time sensor data to adjust motor speeds and minimize path deviation.
+        To evaluate the effectiveness of PID control in spatial intelligence systems, a Raspberry Pi-based line-following robot was used in a simulated experiment. The robot was equipped with a Raspberry Pi 5, a 4-channel IR sensor array, and four DC motors as wheels, controlled via an L298N motor driver. The PID controller was implemented in Python using real-time sensor data to adjust motor speeds and minimize path deviation.
       </p>
 
       <p>
